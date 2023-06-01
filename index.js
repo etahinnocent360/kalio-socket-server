@@ -8,6 +8,7 @@ let activeUsers = [];
 
 io.on("connection", (socket) => {
   //add new user
+  console.log('user connected with id', socket.id)
   socket.on("new-user", (newUserId) => {
     if (!activeUsers.some((user) => user.userId === newUserId)) {
       activeUsers.push({
